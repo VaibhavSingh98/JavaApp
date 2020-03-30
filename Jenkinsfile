@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage ('push artifact') {
             steps {
-                sh 'mkdir archive'
-                sh 'echo test > archive/test.txt'
-                zip zipFile: 'test.zip', archive: false, dir: 'archive'
+                zip zipFile: 'test.zip', archive: false, dir: ''
                 archiveArtifacts artifacts: 'test.zip', fingerprint: true
             }
         }
