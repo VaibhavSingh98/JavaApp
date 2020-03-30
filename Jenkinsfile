@@ -1,21 +1,13 @@
 pipeline {
     agent any
-
     stages {
-        stage('Build') {
+        stage ('push artifact') {
             steps {
-                echo 'Building..'
+                sh 'mkdir archive'
+                sh 'echo test > archive/test.txt'
+                zip zipFile: 'test.zip', archive: false, dir: 'archive'
+                archiveArtifacts artifacts: 'test.zip', fingerprint: true
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+        ...
     }
-}
