@@ -4,7 +4,7 @@ pipeline {
         stage ('push artifact') {
             steps {
                 zip zipFile: 'test1.zip'
-                archiveArtifacts artifacts: 'test.zip', fingerprint: true
+                archiveArtifacts artifacts: 'test1.zip', fingerprint: true
             }
         }
     }
