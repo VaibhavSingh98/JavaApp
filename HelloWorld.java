@@ -4,11 +4,6 @@ public class HelloWorld
 	{
 
 		System.out.println("HelloWorld Pradeep");
-		Hellow pradeep
-
-		System.out.println("HelloWorld");
-		hello Vaibhav
-
 		System.out.println("commit");
                  
 	}
